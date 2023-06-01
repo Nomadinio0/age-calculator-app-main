@@ -102,3 +102,39 @@ body {
 		}
 	}
 }
+
+@media (min-width: 800px) {
+	body {
+		.container {
+			padding: 40px 40px;
+			width: 700px;
+
+			.input {
+				justify-content: left;
+				gap: 30px;
+
+				.box {
+					input {
+						width: 140px;
+						height: 70px;
+						font-size: 32px;
+					}
+				}
+
+				.icon {
+					left: 95%;
+				}
+			}
+
+			.output {
+				padding: 40px 0;
+				.score {
+					p {
+						font-size: 80px;
+						line-height: 90px;
+					}
+				}
+			}
+		}
+	}
+}

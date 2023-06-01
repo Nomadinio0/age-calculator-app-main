@@ -87,4 +87,30 @@ body .container .output .score p {
 }
 body .container .output .score p span {
   color: hsl(259, 100%, 65%);
+}
+
+@media (min-width: 800px) {
+  body .container {
+    padding: 40px 40px;
+    width: 700px;
+  }
+  body .container .input {
+    justify-content: left;
+    gap: 30px;
+  }
+  body .container .input .box input {
+    width: 140px;
+    height: 70px;
+    font-size: 32px;
+  }
+  body .container .input .icon {
+    left: 95%;
+  }
+  body .container .output {
+    padding: 40px 0;
+  }
+  body .container .output .score p {
+    font-size: 80px;
+    line-height: 90px;
+  }
 }/*# sourceMappingURL=style.css.map */
