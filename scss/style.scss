@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	a {
+		color: hsl(228, 45%, 44%);
+	}
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+
+	.container {
+		.input {
+			display: flex;
+			flex-direction: row;
+
+			.box {
+				display: flex;
+				flex-direction: column;
+				width: 25%;
+			}
+		}
+
+		.output {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
