@@ -58,6 +58,18 @@ body .container .input .box input {
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
 }
+body .container .input .box .error {
+  color: hsl(0, 100%, 67%);
+  font-size: 8px;
+  font-weight: 400;
+  font-style: italic;
+}
+body .container .input .invalid label {
+  color: hsl(0, 100%, 67%);
+}
+body .container .input .invalid input {
+  border: 1px solid hsl(0, 100%, 67%);
+}
 body .container .input .icon {
   display: flex;
   justify-content: center;
@@ -102,6 +114,9 @@ body .container .output .score p span {
     width: 140px;
     height: 70px;
     font-size: 32px;
+  }
+  body .container .input .box .error {
+    font-size: 12px;
   }
   body .container .input .icon {
     left: 95%;

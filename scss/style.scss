@@ -61,6 +61,22 @@ body {
 					border-radius: 8px;
 					font-family: 'Poppins', sans-serif;
 				}
+
+				.error {
+					color: $lightRed;
+					font-size: 8px;
+					font-weight: 400;
+					font-style: italic;
+				}
+			}
+
+			.invalid {
+				label {
+					color: $lightRed;
+				}
+				input {
+					border: 1px solid $lightRed;
+				}
 			}
 
 			.icon {
@@ -118,6 +134,10 @@ body {
 						width: 140px;
 						height: 70px;
 						font-size: 32px;
+					}
+
+					.error {
+						font-size: 12px;
 					}
 				}
 
