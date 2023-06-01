@@ -24,17 +24,17 @@
     <div class="input">
       <div class="box input_day">
         <label for="day">Day</label>
-        <input type="text" name="day" id="day" placeholder="DD">
+        <input type="number" name="day" id="dayInput" placeholder="DD">
         <div class="error"></div>
       </div>
       <div class="box input_month">
         <label for="month">Month</label>
-        <input type="text" name="month" id="month" placeholder="MM">
+        <input type="number" name="month" id="monthInput" placeholder="MM">
         <div class="error"></div>
       </div>
       <div class="box input_year">
         <label for="year">Year</label>
-        <input type="text" name="year" id="year" placeholder="YYYY">
+        <input type="number" name="year" id="yearInput" placeholder="YYYY">
         <div class="error"></div>
       </div>
       <div class="icon">
@@ -43,13 +43,13 @@
     </div>
     <div class="output">
       <div class="score output_years">
-        <p><span>- -</span> years</p>
+        <p><span id="yearOutput">- -</span> years</p>
       </div>
       <div class="score output_months">
-        <p><span>- -</span> months</p>
+        <p><span id="monthOutput">- -</span> months</p>
       </div>
       <div class="score output_days">
-        <p><span>- -</span> days</p>
+        <p><span id="dayOutput">- -</span> days</p>
       </div>
     </div>
   </div>
