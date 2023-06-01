@@ -1,3 +1,5 @@
+@import 'colors';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -13,23 +15,90 @@
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100vh;
+	background-color: $offWhite;
 	font-family: 'Poppins', sans-serif;
 
 	.container {
+		margin-top: 50px;
+		padding: 40px 25px;
+		width: 350px;
+		height: 550px;
+		background-color: $white;
+		border-radius: 20px 20px 80px;
+
 		.input {
+			position: relative;
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
+			height: 35%;
+			border-bottom: 1px solid $lightGrey;
 
 			.box {
 				display: flex;
 				flex-direction: column;
-				width: 25%;
+
+				label {
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					font-size: 14px;
+					color: $smokeyGrey;
+				}
+
+				input {
+					height: 60px;
+					width: 90px;
+					margin: 5px 0;
+					padding-left: 15px;
+					font-size: 20px;
+					font-weight: 600;
+					border: 1px solid $lightGrey;
+					border-radius: 8px;
+					font-family: 'Poppins', sans-serif;
+				}
+			}
+
+			.icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 50%);
+				background-color: $purple;
+				border-radius: 70px;
+				height: 70px;
+				width: 70px;
+
+				.arrow {
+					height: 30px;
+				}
 			}
 		}
 
 		.output {
 			display: flex;
 			flex-direction: column;
+			padding: 70px 0;
+
+			.score {
+				p {
+					font-size: 50px;
+					font-weight: 800;
+					font-style: italic;
+					line-height: 60px;
+
+					span {
+						color: $purple;
+					}
+				}
+			}
 		}
 	}
 }

@@ -13,18 +13,78 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: hsl(0, 0%, 94%);
   font-family: "Poppins", sans-serif;
 }
+body .container {
+  margin-top: 50px;
+  padding: 40px 25px;
+  width: 350px;
+  height: 550px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px 20px 80px;
+}
 body .container .input {
+  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  height: 35%;
+  border-bottom: 1px solid hsl(0, 0%, 86%);
 }
 body .container .input .box {
   display: flex;
   flex-direction: column;
-  width: 25%;
+}
+body .container .input .box label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: hsl(0, 1%, 44%);
+}
+body .container .input .box input {
+  height: 60px;
+  width: 90px;
+  margin: 5px 0;
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+}
+body .container .input .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 70px;
+  height: 70px;
+  width: 70px;
+}
+body .container .input .icon .arrow {
+  height: 30px;
 }
 body .container .output {
   display: flex;
   flex-direction: column;
+  padding: 70px 0;
+}
+body .container .output .score p {
+  font-size: 50px;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 60px;
+}
+body .container .output .score p span {
+  color: hsl(259, 100%, 65%);
 }/*# sourceMappingURL=style.css.map */
