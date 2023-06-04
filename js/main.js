@@ -19,21 +19,21 @@ function calculate() {
 	let year = date.getFullYear()
 
 	if (dayInput.value > day) {
-		day = day + months[month - 1]
+		// debugger
+		dayTemp = months[monthInput.value - 1] - dayInput.value
+		day = day + dayTemp
 		month = month - 1
+	} else {
+		day = day - dayInput.value
 	}
 	if (monthInput.value > month) {
 		month = month + 12
 		year = year - 1
 	}
 
-	const dd = day - dayInput.value
-	const mm = month - monthInput.value
-	const yy = year - yearInput.value
-
-	dayOutput.innerHTML = dd
-	monthOutput.innerHTML = mm
-	yearOutput.innerHTML = yy
+	dayOutput.innerHTML = day
+	monthOutput.innerHTML = month - monthInput.value
+	yearOutput.innerHTML = year - yearInput.value
 }
 
 submitBtn.addEventListener('click', calculate)
