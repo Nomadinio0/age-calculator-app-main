@@ -14,21 +14,29 @@ const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 // DO ZROBIENIA
 // }
 
+const setErrorEmpty = () => {}
+
 function validate() {
 	// debugger
-	const dayInputError = dayInput.value.trim()
-	const monthInputError = monthInput.value.trim()
-	const yearInputError = yearInput.value.trim()
 	const inputs = document.querySelectorAll('.inputField')
 
 	inputs.forEach(input => {
 		if (input.value == '') {
-			// const error = document.querySelector('.input_day')
 			const error = input.parentElement.classList.add('invalid')
+			const errorMessage = input.parentElement.querySelector('.error')
+			errorMessage.innerText = 'This field is required'
 		} else {
 			const error = input.parentElement.classList.remove('invalid')
+			const errorMessage = input.parentElement.querySelector('.error')
+			errorMessage.innerText = ''
 		}
 	})
+
+	if (dayInput.value > months[monthInput.value - 1]) {
+		const error = dayInput.parentElement.classList.add('invalid')
+		const errorMessage = dayInput.parentElement.querySelector('.error')
+		errorMessage.innerText = 'Must be a valid day'
+	}
 }
 
 function calculate() {
