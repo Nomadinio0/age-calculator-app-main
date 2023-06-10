@@ -34,7 +34,7 @@ function dateCheck() {
 	let currentYear = date.getFullYear()
 	let currentDay = date.getDate()
 	let currentMonth = 1 + date.getMonth()
-	debugger
+
 	if (yearInput.value >= currentYear) {
 		if (monthInput.value > currentMonth) {
 			redInputs()
@@ -53,13 +53,13 @@ function dateCheck() {
 		const errorMessage = dayInput.parentElement.querySelector('.error')
 		errorMessage.innerText = 'Must be a valid date'
 		errorDate = true
-	} else if (dayInput.value > 31) {
+	} else if (dayInput.value > 31 || dayInput.value <= 0) {
 		dayInput.parentElement.classList.add('invalid')
 		const errorMessage = dayInput.parentElement.querySelector('.error')
 		errorMessage.innerText = 'Must be a valid day'
 		errorDate = true
 	}
-	if (monthInput.value > 12) {
+	if (monthInput.value > 12 || monthInput.value <= 0) {
 		monthInput.parentElement.classList.add('invalid')
 		const errorMessage = monthInput.parentElement.querySelector('.error')
 		errorMessage.innerText = 'Must be a valid month'
