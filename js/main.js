@@ -7,7 +7,7 @@ let monthOutput = document.getElementById('monthOutput')
 let yearOutput = document.getElementById('yearOutput')
 
 const submitBtn = document.querySelector('.icon')
-
+const date = new Date()
 const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 function setErrorEmpty(input) {
@@ -23,45 +23,37 @@ function setErrorEmpty(input) {
 	}
 }
 
+function redInputs() {
+	yearInput.parentElement.classList.add('invalid')
+	dayInput.parentElement.classList.add('invalid')
+	monthInput.parentElement.classList.add('invalid')
+}
+
 function dateCheck() {
 	let errorDate = false
-	const currentDate = new Date()
-	let currentYear = currentDate.getFullYear()
-	let currentDay = currentDate.getDate()
-	let currentMonth = 1 + currentDate.getMonth()
+	let currentYear = date.getFullYear()
+	let currentDay = date.getDate()
+	let currentMonth = 1 + date.getMonth()
 	debugger
 	if (yearInput.value >= currentYear) {
 		if (monthInput.value > currentMonth) {
-			yearInput.parentElement.classList.add('invalid')
-			dayInput.parentElement.classList.add('invalid')
-			monthInput.parentElement.classList.add('invalid')
+			redInputs()
 			const errorMessage = yearInput.parentElement.querySelector('.error')
 			errorMessage.innerText = 'Must be in the past'
 			errorDate = true
 		} else if (monthInput.value == currentMonth && dayInput.value >= currentDay) {
-			yearInput.parentElement.classList.add('invalid')
-			dayInput.parentElement.classList.add('invalid')
-			monthInput.parentElement.classList.add('invalid')
+			redInputs()
 			const errorMessage = yearInput.parentElement.querySelector('.error')
 			errorMessage.innerText = 'Must be in the past'
 			errorDate = true
 		}
 	}
-	// if (yearInput.value >= currentYear && monthInput.value > currentMonth && dayInput.value >= currentDay) {
-	// 	const error = yearInput.parentElement.classList.add('invalid')
-	// 	const errorMessage = yearInput.parentElement.querySelector('.error')
-	// 	errorMessage.innerText = 'Must be in the past'
-	// 	errorDate = true
-	// }
 	if (dayInput.value > months[monthInput.value - 1]) {
-		dayInput.parentElement.classList.add('invalid')
+		redInputs()
 		const errorMessage = dayInput.parentElement.querySelector('.error')
 		errorMessage.innerText = 'Must be a valid date'
-		monthInput.parentElement.classList.add('invalid')
-		yearInput.parentElement.classList.add('invalid')
 		errorDate = true
-	}
-	if (dayInput.value > 31) {
+	} else if (dayInput.value > 31) {
 		dayInput.parentElement.classList.add('invalid')
 		const errorMessage = dayInput.parentElement.querySelector('.error')
 		errorMessage.innerText = 'Must be a valid day'
@@ -107,11 +99,9 @@ function validate() {
 		return true
 	}
 }
-//DO NAPRAWIENIA ^^^^^^^^^^^^^^^^^
 
 function calculate() {
 	if (validate()) {
-		const date = new Date()
 		let day = date.getDate()
 		let month = 1 + date.getMonth()
 		let year = date.getFullYear()
